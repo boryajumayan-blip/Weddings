@@ -27,6 +27,7 @@ body {
     overflow-x: hidden;
 }
 
+
 /* =====================================================
    FULL SCREEN ENVELOPE
 ===================================================== */
@@ -36,6 +37,7 @@ body {
     inset: 0;
     width: 100%;
     height: 100vh;
+    height: 100dvh;
     z-index: 99999;
 
     display: flex;
@@ -82,6 +84,7 @@ body {
         );
 }
 
+
 /* Envelope body */
 
 .envelope-body {
@@ -124,6 +127,7 @@ body {
         min(170px, 29vw)
         solid transparent;
 }
+
 
 /* Letter */
 
@@ -171,6 +175,7 @@ body {
     font-weight: 400;
     margin-top: 8px;
 }
+
 
 /* Envelope flap */
 
@@ -359,6 +364,7 @@ section {
 
 .hero {
     min-height: 100vh;
+    min-height: 100dvh;
 
     display: flex;
     align-items: center;
@@ -640,78 +646,25 @@ section {
 
     margin: auto;
 
-    text-align: left;
+    text-align: center;
 }
 
-.form-group {
-    margin-bottom: 22px;
-}
-
-.form-group label {
-    display: block;
-
-    font-size: 10px;
-
-    text-transform: uppercase;
-
-    letter-spacing: 2px;
-
-    color: #8e7658;
-
-    margin-bottom: 8px;
-}
-
-input,
-select,
-textarea {
-    width: 100%;
-
-    border: none;
-
-    border-bottom:
-        1px solid #cec3b4;
-
-    background: transparent;
-
-    padding: 13px 4px;
-
-    outline: none;
-
+.rsvp-message {
     font-family:
-        'Montserrat',
-        sans-serif;
+        'Cormorant Garamond',
+        serif;
 
-    font-size: 14px;
-}
+    font-size: 25px;
 
-textarea {
-    min-height: 80px;
+    line-height: 1.7;
 
-    resize: vertical;
-}
-
-.radio-group {
-    display: flex;
-
-    gap: 20px;
-
-    flex-wrap: wrap;
-}
-
-.radio-group label {
-    text-transform: none;
-
-    letter-spacing: 0;
-
-    color: #3d3935;
-}
-
-.radio-group input {
-    width: auto;
+    margin-bottom: 30px;
 }
 
 .submit-btn {
     width: 100%;
+
+    display: block;
 
     padding: 17px;
 
@@ -728,6 +681,16 @@ textarea {
     cursor: pointer;
 
     transition: .3s;
+
+    text-decoration: none;
+
+    text-align: center;
+
+    font-family:
+        'Montserrat',
+        sans-serif;
+
+    font-size: 11px;
 }
 
 .submit-btn:hover {
@@ -957,6 +920,10 @@ footer p {
         font-size: 43px;
     }
 
+    .rsvp-message {
+        font-size: 22px;
+    }
+
 }
 
 </style>
@@ -1001,7 +968,7 @@ footer p {
             <div class="envelope-flap"></div>
 
 
-            <!-- TWO SMALL DOVES ON THE WAX SEAL -->
+            <!-- TWO SMALL DOVES -->
 
             <div class="wax-seal">
 
@@ -1045,6 +1012,7 @@ footer p {
         type="audio/mpeg">
 
 </audio>
+
 
 <button
     class="music-button"
@@ -1257,7 +1225,8 @@ footer p {
                     <a
                         class="btn"
                         href="https://www.google.com/maps/search/?api=1&query=Etchmiadzin+Cathedral"
-                        target="_blank">
+                        target="_blank"
+                        rel="noopener noreferrer">
 
                         Բացել քարտեզը
 
@@ -1320,7 +1289,8 @@ footer p {
                     <a
                         class="btn"
                         href="https://www.google.com/maps/search/?api=1&query=Dvin+Music+Hall+Yerevan"
-                        target="_blank">
+                        target="_blank"
+                        rel="noopener noreferrer">
 
                         Բացել քարտեզը
 
@@ -1340,7 +1310,9 @@ footer p {
     </section>
 
 
-    <!-- RSVP -->
+    <!-- =================================================
+         RSVP
+    ================================================== -->
 
     <section class="rsvp">
 
@@ -1355,139 +1327,33 @@ footer p {
             </h2>
 
 
-            <form
-                class="rsvp-form"
-                id="rsvpForm">
+            <div class="rsvp-form">
+
+                <p class="rsvp-message">
+
+                    Սիրով խնդրում ենք հաստատել
+                    Ձեր մասնակցությունը։
+
+                    <br>
+
+                    Ձեր պատասխանը կօգնի մեզ
+                    ավելի լավ պատրաստվել
+                    այս գեղեցիկ օրվան։
+
+                </p>
 
 
-                <div class="form-group">
-
-                    <label>
-                        Անուն
-                    </label>
-
-                    <input
-                        type="text"
-                        id="firstName"
-                        placeholder="Ձեր անունը"
-                        required>
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label>
-                        Ազգանուն
-                    </label>
-
-                    <input
-                        type="text"
-                        id="lastName"
-                        placeholder="Ձեր ազգանունը"
-                        required>
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label>
-                        Մասնակցություն
-                    </label>
-
-
-                    <div class="radio-group">
-
-                        <label>
-
-                            <input
-                                type="radio"
-                                name="attendance"
-                                value="Կգամ"
-                                required>
-
-                            Սիրով կգամ
-
-                        </label>
-
-
-                        <label>
-
-                            <input
-                                type="radio"
-                                name="attendance"
-                                value="Չեմ կարող գալ">
-
-                            Ցավոք չեմ կարող գալ
-
-                        </label>
-
-                    </div>
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label>
-                        Քանի հոգով եք գալու
-                    </label>
-
-                    <select id="guests">
-
-                        <option value="1">
-                            1 հոգի
-                        </option>
-
-                        <option value="2">
-                            2 հոգի
-                        </option>
-
-                        <option value="3">
-                            3 հոգի
-                        </option>
-
-                        <option value="4">
-                            4 հոգի
-                        </option>
-
-                        <option value="5">
-                            5 հոգի
-                        </option>
-
-                        <option value="6">
-                            6 հոգի
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label>
-                        Հաղորդագրություն
-                    </label>
-
-                    <textarea
-                        id="message"
-                        placeholder="Ցանկության դեպքում թողեք հաղորդագրություն...">
-                    </textarea>
-
-                </div>
-
-
-                <button
-                    type="submit"
+                <a
+                    href="https://forms.gle/W8V7ER3DMcmsNkPk8"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     class="submit-btn">
 
                     Հաստատել մասնակցությունը
 
-                </button>
+                </a>
 
-            </form>
+            </div>
 
 
             <!-- GUEST LIST -->
@@ -1502,7 +1368,8 @@ footer p {
                     class="guest-counter"
                     id="guestCounter">
 
-                    Դեռ ոչ ոք չի գրանցվել
+                    RSVP-ը հաստատելու համար
+                    սեղմեք վերևի կոճակը։
 
                 </div>
 
@@ -1510,7 +1377,10 @@ footer p {
                 <div id="guestList">
 
                     <div class="empty-guests">
-                        Ձեր հաստատումը կլինի առաջինը 🤍
+
+                        Սիրով սպասում ենք Ձեր
+                        մասնակցության հաստատմանը 🤍
+
                     </div>
 
                 </div>
@@ -1575,20 +1445,20 @@ envelope.addEventListener(
 
 
         /*
-           Start music after user interaction.
-           This works with browser autoplay policies.
-        */
+         * Music starts after the user taps
+         * the envelope.
+         */
 
         music.volume = 0.35;
 
         music.play()
-            .then(() => {
+            .then(function() {
 
                 musicButton.style.display =
                     "block";
 
             })
-            .catch(() => {
+            .catch(function() {
 
                 musicButton.style.display =
                     "block";
@@ -1623,6 +1493,7 @@ envelope.addEventListener(
 ===================================================== */
 
 let musicPlaying = true;
+
 
 musicButton.addEventListener(
     "click",
@@ -1723,22 +1594,23 @@ function updateCountdown() {
 
     document.getElementById("days")
         .innerText =
-        String(days).padStart(2,"0");
+        String(days).padStart(2, "0");
 
 
     document.getElementById("hours")
         .innerText =
-        String(hours).padStart(2,"0");
+        String(hours).padStart(2, "0");
 
 
     document.getElementById("minutes")
         .innerText =
-        String(minutes).padStart(2,"0");
+        String(minutes).padStart(2, "0");
 
 
     document.getElementById("seconds")
         .innerText =
-        String(seconds).padStart(2,"0");
+        String(seconds).padStart(2, "0");
+
 }
 
 
@@ -1747,245 +1619,6 @@ updateCountdown();
 setInterval(
     updateCountdown,
     1000
-);
-
-
-/* =====================================================
-   RSVP
-===================================================== */
-
-
-/*
-   Temporary local storage.
-
-   This means registrations stay in the browser
-   that submitted them.
-
-   For a REAL shared guest list between all visitors,
-   connect this section to Google Sheets / Firebase /
-   another database.
-*/
-
-
-let guestsList =
-    JSON.parse(
-        localStorage.getItem(
-            "baptismGuests"
-        )
-    ) || [];
-
-
-function renderGuests() {
-
-    const list =
-        document.getElementById(
-            "guestList"
-        );
-
-    const counter =
-        document.getElementById(
-            "guestCounter"
-        );
-
-
-    list.innerHTML = "";
-
-
-    if (guestsList.length === 0) {
-
-        counter.innerText =
-            "Դեռ ոչ ոք չի գրանցվել";
-
-        list.innerHTML = `
-            <div class="empty-guests">
-                Ձեր հաստատումը կլինի առաջինը 🤍
-            </div>
-        `;
-
-        return;
-    }
-
-
-    let totalPeople = 0;
-
-
-    guestsList.forEach(
-        function(guest) {
-
-            totalPeople +=
-                Number(guest.people);
-
-
-            const guestElement =
-                document.createElement(
-                    "div"
-                );
-
-            guestElement.className =
-                "guest";
-
-
-            guestElement.innerHTML = `
-
-                <div>
-
-                    <div class="guest-name">
-                        ${guest.firstName}
-                        ${guest.lastName}
-                    </div>
-
-                </div>
-
-                <div class="guest-number">
-                    ${guest.people} հոգի
-                </div>
-
-            `;
-
-
-            list.appendChild(
-                guestElement
-            );
-
-        }
-    );
-
-
-    counter.innerText =
-        guestsList.length +
-        " ընտանիք / " +
-        totalPeople +
-        " հոգի";
-}
-
-
-renderGuests();
-
-
-/* =====================================================
-   RSVP SUBMIT
-===================================================== */
-
-const form =
-    document.getElementById(
-        "rsvpForm"
-    );
-
-
-form.addEventListener(
-    "submit",
-    function(event) {
-
-        event.preventDefault();
-
-
-        const firstName =
-            document.getElementById(
-                "firstName"
-            ).value.trim();
-
-
-        const lastName =
-            document.getElementById(
-                "lastName"
-            ).value.trim();
-
-
-        const people =
-            document.getElementById(
-                "guests"
-            ).value;
-
-
-        const attendance =
-            document.querySelector(
-                'input[name="attendance"]:checked'
-            );
-
-
-        const message =
-            document.getElementById(
-                "message"
-            ).value.trim();
-
-
-        if (!attendance) {
-
-            alert(
-                "Խնդրում ենք նշել՝ կմասնակցե՞ք։"
-            );
-
-            return;
-        }
-
-
-        if (
-            attendance.value !==
-            "Կգամ"
-        ) {
-
-            alert(
-                "Շնորհակալություն պատասխանի համար 🤍"
-            );
-
-            return;
-        }
-
-
-        const guest = {
-
-            firstName:
-                firstName,
-
-            lastName:
-                lastName,
-
-            people:
-                people,
-
-            message:
-                message,
-
-            date:
-                new Date()
-                .toLocaleString()
-
-        };
-
-
-        guestsList.push(
-            guest
-        );
-
-
-        localStorage.setItem(
-            "baptismGuests",
-            JSON.stringify(
-                guestsList
-            )
-        );
-
-
-        renderGuests();
-
-
-        form.reset();
-
-
-        alert(
-            "Շնորհակալություն 🤍 Ձեր մասնակցությունը հաստատվեց։"
-        );
-
-
-        document
-            .querySelector(
-                ".guest-list"
-            )
-            .scrollIntoView({
-                behavior:"smooth"
-            });
-
-    }
 );
 
 </script>
